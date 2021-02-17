@@ -9,11 +9,13 @@ const InputTodo = () => {
     const handleSubmit = e =>{
         e.preventDefault()
         dispatch({type:"ADD", payload: newToDo})
+        dispatch({type:"SORT"})
+
         setNewToDo("")
     }
     return (
         <div>
-            <input type="text" value={newToDo} onChange={(e)=>{setNewToDo(e.target.value)}} />
+            <input type="text" autoFocus={true} value={newToDo} onChange={(e)=>{setNewToDo(e.target.value)}} />
             <button onClick={(e)=> handleSubmit(e)}>Add Todo</button>
         </div>
     )
