@@ -18,8 +18,7 @@ export const reducer = ( state, action) => {
                 }else{ return t}
             })
         case "SORT":
-            let newState = state.sort( (a,b)=> b.score-a.score)
-            return newState
+            return state.sort( (a,b)=> b.score-a.score)
     }
 }
 
